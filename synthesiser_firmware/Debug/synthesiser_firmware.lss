@@ -1,0 +1,2005 @@
+
+synthesiser_firmware.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000002f4  00800100  00000c24  00000cb8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000c24  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000140  008003f4  008003f4  00000fac  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000fac  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000148  00000000  00000000  00000fdc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000bfd  00000000  00000000  00001124  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000380  00000000  00000000  00001d21  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000005ce  00000000  00000000  000020a1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000034c  00000000  00000000  00002670  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000500  00000000  00000000  000029bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000008fe  00000000  00000000  00002ebc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000128  00000000  00000000  000037ba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   8:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  10:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  14:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  18:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  1c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  20:	0c 94 16 03 	jmp	0x62c	; 0x62c <__vector_8>
+  24:	0c 94 a9 01 	jmp	0x352	; 0x352 <__vector_9>
+  28:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  2c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  30:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  34:	0c 94 74 01 	jmp	0x2e8	; 0x2e8 <__vector_13>
+  38:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  3c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  40:	0c 94 3f 01 	jmp	0x27e	; 0x27e <__vector_16>
+  44:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  48:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  4c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  50:	0c 94 9d 02 	jmp	0x53a	; 0x53a <__vector_20>
+  54:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  58:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  5c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  60:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  64:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  68:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  6c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  70:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  74:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  78:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d8 e0       	ldi	r29, 0x08	; 8
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+
+00000088 <__do_copy_data>:
+  88:	13 e0       	ldi	r17, 0x03	; 3
+  8a:	a0 e0       	ldi	r26, 0x00	; 0
+  8c:	b1 e0       	ldi	r27, 0x01	; 1
+  8e:	e4 e2       	ldi	r30, 0x24	; 36
+  90:	fc e0       	ldi	r31, 0x0C	; 12
+  92:	02 c0       	rjmp	.+4      	; 0x98 <__do_copy_data+0x10>
+  94:	05 90       	lpm	r0, Z+
+  96:	0d 92       	st	X+, r0
+  98:	a4 3f       	cpi	r26, 0xF4	; 244
+  9a:	b1 07       	cpc	r27, r17
+  9c:	d9 f7       	brne	.-10     	; 0x94 <__do_copy_data+0xc>
+
+0000009e <__do_clear_bss>:
+  9e:	25 e0       	ldi	r18, 0x05	; 5
+  a0:	a4 ef       	ldi	r26, 0xF4	; 244
+  a2:	b3 e0       	ldi	r27, 0x03	; 3
+  a4:	01 c0       	rjmp	.+2      	; 0xa8 <.do_clear_bss_start>
+
+000000a6 <.do_clear_bss_loop>:
+  a6:	1d 92       	st	X+, r1
+
+000000a8 <.do_clear_bss_start>:
+  a8:	a4 33       	cpi	r26, 0x34	; 52
+  aa:	b2 07       	cpc	r27, r18
+  ac:	e1 f7       	brne	.-8      	; 0xa6 <.do_clear_bss_loop>
+  ae:	0e 94 84 05 	call	0xb08	; 0xb08 <main>
+  b2:	0c 94 10 06 	jmp	0xc20	; 0xc20 <_exit>
+
+000000b6 <__bad_interrupt>:
+  b6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ba <initialise_timer>:
+ * A function for initialising three timer. The reason to have three timer open is to
+ * receive three different frequency signal when three button is pressed all the time.
+ *
+ */
+void initialise_timer (void) {
+	TCCR0A = (0<<COM0A1) | (0<<COM0A0) | (1<<WGM01); //setting normal port operation D3
+  ba:	92 e0       	ldi	r25, 0x02	; 2
+  bc:	94 bd       	out	0x24, r25	; 36
+	TCCR0B = _BV(CS00);
+  be:	81 e0       	ldi	r24, 0x01	; 1
+  c0:	85 bd       	out	0x25, r24	; 37
+	TCCR1A = (0<<COM1A1) | (0<<COM1A0); //setting normal port operation D7
+  c2:	10 92 80 00 	sts	0x0080, r1
+	TCCR1B = _BV(CS10) | _BV(WGM12);
+  c6:	29 e0       	ldi	r18, 0x09	; 9
+  c8:	20 93 81 00 	sts	0x0081, r18
+	TCCR2A = (0<<COM2A1) | (0<<COM2A0) | (1<<WGM21); //setting normal port operation C2
+  cc:	90 93 b0 00 	sts	0x00B0, r25
+	TCCR2B = _BV(CS20);
+  d0:	80 93 b1 00 	sts	0x00B1, r24
+	TCNT1 = 0;
+  d4:	10 92 85 00 	sts	0x0085, r1
+  d8:	10 92 84 00 	sts	0x0084, r1
+	TCNT0 = 0;
+  dc:	16 bc       	out	0x26, r1	; 38
+	TCNT2 = 0;
+  de:	10 92 b2 00 	sts	0x00B2, r1
+  e2:	08 95       	ret
+
+000000e4 <initialise_USART>:
+ * A function for initialising USART connection to receive the notes and scale
+ * change the software send to synthesiser board.
+ *
+ */
+void initialise_USART(void) {
+	UBRR0L = BAUD_PRESCALE;
+  e4:	83 e3       	ldi	r24, 0x33	; 51
+  e6:	80 93 c4 00 	sts	0x00C4, r24
+	UBRR0H = (BAUD_PRESCALE >> 8);
+  ea:	10 92 c5 00 	sts	0x00C5, r1
+	UCSR0B = ((1 << TXEN0) | (1 << RXEN0) | (1 << RXCIE0));
+  ee:	88 e9       	ldi	r24, 0x98	; 152
+  f0:	80 93 c1 00 	sts	0x00C1, r24
+  f4:	08 95       	ret
+
+000000f6 <initialise_adc_channel>:
+ * A function for initialising adc channel to receiving the cutoff frequency
+ * signal which sent from the potentiometer to voltage control filter. 
+ *
+ */
+void initialise_adc_channel (void) {
+	ADCSRA = (1<<ADEN) | (1<<ADPS1) | (1<<ADPS2);
+  f6:	86 e8       	ldi	r24, 0x86	; 134
+  f8:	80 93 7a 00 	sts	0x007A, r24
+	ADMUX  = _BV(MUX2) | _BV(ADLAR);
+  fc:	84 e2       	ldi	r24, 0x24	; 36
+  fe:	80 93 7c 00 	sts	0x007C, r24
+ 102:	08 95       	ret
+
+00000104 <initialise_wdt>:
+/*  
+ * A function for initialising watch dog timer.
+ */
+void initialise_wdt(void)
+{
+	wdt_reset();
+ 104:	a8 95       	wdr
+	WDTCSR = (1<<WDCE)|(1<<WDE);
+ 106:	e0 e6       	ldi	r30, 0x60	; 96
+ 108:	f0 e0       	ldi	r31, 0x00	; 0
+ 10a:	88 e1       	ldi	r24, 0x18	; 24
+ 10c:	80 83       	st	Z, r24
+	WDTCSR = (1<<WDIE)|(1<<WDP0);
+ 10e:	81 e4       	ldi	r24, 0x41	; 65
+ 110:	80 83       	st	Z, r24
+ 112:	08 95       	ret
+
+00000114 <initialise_hardware>:
+
+/*
+ *A function for initialising all hardware settings.
+ */
+void initialise_hardware() {
+	initialise_timer(); // Initialise timer
+ 114:	0e 94 5d 00 	call	0xba	; 0xba <initialise_timer>
+	initialise_adc_channel(); // Initialise adc channel
+ 118:	0e 94 7b 00 	call	0xf6	; 0xf6 <initialise_adc_channel>
+	initialise_USART();  // Initialise USART
+ 11c:	0e 94 72 00 	call	0xe4	; 0xe4 <initialise_USART>
+	initialise_i2c(); //initialise i2c
+ 120:	0e 94 c8 05 	call	0xb90	; 0xb90 <initialise_i2c>
+	initialise_wdt(); //initialise watchdog
+ 124:	0e 94 82 00 	call	0x104	; 0x104 <initialise_wdt>
+ 128:	08 95       	ret
+
+0000012a <initialise_DDR>:
+
+/*
+ * A function for initialising data direction register.
+ */
+void initialise_DDR() {
+	DDRC = 0x04;
+ 12a:	84 e0       	ldi	r24, 0x04	; 4
+ 12c:	87 b9       	out	0x07, r24	; 7
+	DDRB  = 0xFF;
+ 12e:	8f ef       	ldi	r24, 0xFF	; 255
+ 130:	84 b9       	out	0x04, r24	; 4
+	DDRA = 0x00;
+ 132:	11 b8       	out	0x01, r1	; 1
+	DDRD = 0xFF;
+ 134:	8a b9       	out	0x0a, r24	; 10
+ 136:	08 95       	ret
+
+00000138 <initialise_button_freq>:
+
+/*
+ * A function for initialising default button frequency 
+ * in case the software doesn't send default note to synth.
+ */
+void initialise_button_freq(void) {
+ 138:	cf 93       	push	r28
+ 13a:	df 93       	push	r29
+ 13c:	ac ec       	ldi	r26, 0xCC	; 204
+ 13e:	b1 e0       	ldi	r27, 0x01	; 1
+ 140:	e4 e3       	ldi	r30, 0x34	; 52
+ 142:	f4 e0       	ldi	r31, 0x04	; 4
+ 144:	c4 e2       	ldi	r28, 0x24	; 36
+ 146:	d1 e0       	ldi	r29, 0x01	; 1
+ 148:	24 e7       	ldi	r18, 0x74	; 116
+ 14a:	32 e0       	ldi	r19, 0x02	; 2
+	for (i = 0; i < 84; i++) {
+		KeySound[i].OCR = freqOCRArray[i];
+ 14c:	8c 91       	ld	r24, X
+ 14e:	12 96       	adiw	r26, 0x02	; 2
+ 150:	80 83       	st	Z, r24
+		KeySound[i].PRE = freqPREArray[i];
+ 152:	89 91       	ld	r24, Y+
+ 154:	99 91       	ld	r25, Y+
+ 156:	92 83       	std	Z+2, r25	; 0x02
+ 158:	81 83       	std	Z+1, r24	; 0x01
+ 15a:	33 96       	adiw	r30, 0x03	; 3
+/*
+ * A function for initialising default button frequency 
+ * in case the software doesn't send default note to synth.
+ */
+void initialise_button_freq(void) {
+	for (i = 0; i < 84; i++) {
+ 15c:	a2 17       	cp	r26, r18
+ 15e:	b3 07       	cpc	r27, r19
+ 160:	a9 f7       	brne	.-22     	; 0x14c <initialise_button_freq+0x14>
+ 162:	a4 e1       	ldi	r26, 0x14	; 20
+ 164:	b1 e0       	ldi	r27, 0x01	; 1
+ 166:	ea e1       	ldi	r30, 0x1A	; 26
+ 168:	f4 e0       	ldi	r31, 0x04	; 4
+ 16a:	c4 e0       	ldi	r28, 0x04	; 4
+ 16c:	d1 e0       	ldi	r29, 0x01	; 1
+ 16e:	24 e2       	ldi	r18, 0x24	; 36
+ 170:	31 e0       	ldi	r19, 0x01	; 1
+		KeySound[i].OCR = freqOCRArray[i];
+		KeySound[i].PRE = freqPREArray[i];
+	}
+	for (i = 0; i < 8; i++) {
+		ButtonSound[i].OCR = initOCRArray[i];
+ 172:	8c 91       	ld	r24, X
+ 174:	12 96       	adiw	r26, 0x02	; 2
+ 176:	80 83       	st	Z, r24
+		ButtonSound[i].PRE = initPREArray[i];
+ 178:	89 91       	ld	r24, Y+
+ 17a:	99 91       	ld	r25, Y+
+ 17c:	92 83       	std	Z+2, r25	; 0x02
+ 17e:	81 83       	std	Z+1, r24	; 0x01
+ 180:	33 96       	adiw	r30, 0x03	; 3
+void initialise_button_freq(void) {
+	for (i = 0; i < 84; i++) {
+		KeySound[i].OCR = freqOCRArray[i];
+		KeySound[i].PRE = freqPREArray[i];
+	}
+	for (i = 0; i < 8; i++) {
+ 182:	a2 17       	cp	r26, r18
+ 184:	b3 07       	cpc	r27, r19
+ 186:	a9 f7       	brne	.-22     	; 0x172 <initialise_button_freq+0x3a>
+ 188:	88 e0       	ldi	r24, 0x08	; 8
+ 18a:	90 e0       	ldi	r25, 0x00	; 0
+ 18c:	90 93 07 04 	sts	0x0407, r25
+ 190:	80 93 06 04 	sts	0x0406, r24
+		ButtonSound[i].OCR = initOCRArray[i];
+		ButtonSound[i].PRE = initPREArray[i];
+	}
+}
+ 194:	df 91       	pop	r29
+ 196:	cf 91       	pop	r28
+ 198:	08 95       	ret
+
+0000019a <stop_keyboard>:
+ * A function for the release of a keyboard key.
+ */
+void stop_keyboard (int value) {
+	int i = 0;
+	for(i=0; i<3; i++) {
+		if(keyboardQueue[i].value == value - 84) {
+ 19a:	84 55       	subi	r24, 0x54	; 84
+ 19c:	91 09       	sbc	r25, r1
+ 19e:	20 91 0c 04 	lds	r18, 0x040C
+ 1a2:	30 91 0d 04 	lds	r19, 0x040D
+ 1a6:	28 17       	cp	r18, r24
+ 1a8:	39 07       	cpc	r19, r25
+ 1aa:	c1 f5       	brne	.+112    	; 0x21c <stop_keyboard+0x82>
+			if(i==0) {
+				TIMSK0 = 0;
+ 1ac:	10 92 6e 00 	sts	0x006E, r1
+				TIMSK1 = 0;
+			}
+			if(i==2) {
+				TIMSK2 = 0;
+			}
+			keyboardQueue[i].value = -1;
+ 1b0:	2f ef       	ldi	r18, 0xFF	; 255
+ 1b2:	3f ef       	ldi	r19, 0xFF	; 255
+ 1b4:	30 93 0d 04 	sts	0x040D, r19
+ 1b8:	20 93 0c 04 	sts	0x040C, r18
+ 1bc:	2f c0       	rjmp	.+94     	; 0x21c <stop_keyboard+0x82>
+		if(keyboardQueue[i].value == value - 84) {
+			if(i==0) {
+				TIMSK0 = 0;
+			}
+			if(i==1) {
+				TIMSK1 = 0;
+ 1be:	10 92 6f 00 	sts	0x006F, r1
+			}
+			if(i==2) {
+				TIMSK2 = 0;
+			}
+			keyboardQueue[i].value = -1;
+ 1c2:	2f ef       	ldi	r18, 0xFF	; 255
+ 1c4:	3f ef       	ldi	r19, 0xFF	; 255
+ 1c6:	30 93 0f 04 	sts	0x040F, r19
+ 1ca:	20 93 0e 04 	sts	0x040E, r18
+ * A function for the release of a keyboard key.
+ */
+void stop_keyboard (int value) {
+	int i = 0;
+	for(i=0; i<3; i++) {
+		if(keyboardQueue[i].value == value - 84) {
+ 1ce:	20 91 10 04 	lds	r18, 0x0410
+ 1d2:	30 91 11 04 	lds	r19, 0x0411
+ 1d6:	28 17       	cp	r18, r24
+ 1d8:	39 07       	cpc	r19, r25
+ 1da:	81 f4       	brne	.+32     	; 0x1fc <stop_keyboard+0x62>
+ 1dc:	07 c0       	rjmp	.+14     	; 0x1ec <stop_keyboard+0x52>
+ 1de:	20 91 10 04 	lds	r18, 0x0410
+ 1e2:	30 91 11 04 	lds	r19, 0x0411
+ 1e6:	28 17       	cp	r18, r24
+ 1e8:	39 07       	cpc	r19, r25
+ 1ea:	41 f4       	brne	.+16     	; 0x1fc <stop_keyboard+0x62>
+			}
+			if(i==1) {
+				TIMSK1 = 0;
+			}
+			if(i==2) {
+				TIMSK2 = 0;
+ 1ec:	10 92 70 00 	sts	0x0070, r1
+			}
+			keyboardQueue[i].value = -1;
+ 1f0:	8f ef       	ldi	r24, 0xFF	; 255
+ 1f2:	9f ef       	ldi	r25, 0xFF	; 255
+ 1f4:	90 93 11 04 	sts	0x0411, r25
+ 1f8:	80 93 10 04 	sts	0x0410, r24
+		}
+	}
+	if (TIMSK0 == 0 && TIMSK1 == 0 && TIMSK2 == 0)
+ 1fc:	80 91 6e 00 	lds	r24, 0x006E
+ 200:	81 11       	cpse	r24, r1
+ 202:	14 c0       	rjmp	.+40     	; 0x22c <stop_keyboard+0x92>
+ 204:	80 91 6f 00 	lds	r24, 0x006F
+ 208:	81 11       	cpse	r24, r1
+ 20a:	10 c0       	rjmp	.+32     	; 0x22c <stop_keyboard+0x92>
+ 20c:	80 91 70 00 	lds	r24, 0x0070
+ 210:	81 11       	cpse	r24, r1
+ 212:	0c c0       	rjmp	.+24     	; 0x22c <stop_keyboard+0x92>
+	{
+		PORTD &= ~((1 << PORTD5) | (1 << PORTD6));
+ 214:	8b b1       	in	r24, 0x0b	; 11
+ 216:	8f 79       	andi	r24, 0x9F	; 159
+ 218:	8b b9       	out	0x0b, r24	; 11
+ 21a:	08 95       	ret
+ * A function for the release of a keyboard key.
+ */
+void stop_keyboard (int value) {
+	int i = 0;
+	for(i=0; i<3; i++) {
+		if(keyboardQueue[i].value == value - 84) {
+ 21c:	20 91 0e 04 	lds	r18, 0x040E
+ 220:	30 91 0f 04 	lds	r19, 0x040F
+ 224:	82 17       	cp	r24, r18
+ 226:	93 07       	cpc	r25, r19
+ 228:	d1 f6       	brne	.-76     	; 0x1de <stop_keyboard+0x44>
+ 22a:	c9 cf       	rjmp	.-110    	; 0x1be <stop_keyboard+0x24>
+ 22c:	08 95       	ret
+
+0000022e <update_button_freq>:
+
+/*
+ * A function for the updating of button notes
+ */
+void update_button_freq(int receValue, int buttonIndex) {
+	PORTD |= (1<<PORTD6);
+ 22e:	5e 9a       	sbi	0x0b, 6	; 11
+	int valueIndex;
+	valueIndex = receValue - 168;
+	ButtonSound[buttonIndex] = KeySound[valueIndex];
+ 230:	fb 01       	movw	r30, r22
+ 232:	ee 0f       	add	r30, r30
+ 234:	ff 1f       	adc	r31, r31
+ 236:	6e 0f       	add	r22, r30
+ 238:	7f 1f       	adc	r23, r31
+ 23a:	fb 01       	movw	r30, r22
+ 23c:	e6 5e       	subi	r30, 0xE6	; 230
+ 23e:	fb 4f       	sbci	r31, 0xFB	; 251
+ 240:	88 5a       	subi	r24, 0xA8	; 168
+ 242:	91 09       	sbc	r25, r1
+ 244:	dc 01       	movw	r26, r24
+ 246:	aa 0f       	add	r26, r26
+ 248:	bb 1f       	adc	r27, r27
+ 24a:	8a 0f       	add	r24, r26
+ 24c:	9b 1f       	adc	r25, r27
+ 24e:	dc 01       	movw	r26, r24
+ 250:	ac 5c       	subi	r26, 0xCC	; 204
+ 252:	bb 4f       	sbci	r27, 0xFB	; 251
+ 254:	8d 91       	ld	r24, X+
+ 256:	9d 91       	ld	r25, X+
+ 258:	ac 91       	ld	r26, X
+ 25a:	80 83       	st	Z, r24
+ 25c:	91 83       	std	Z+1, r25	; 0x01
+ 25e:	a2 83       	std	Z+2, r26	; 0x02
+ 260:	08 95       	ret
+
+00000262 <get_pot_value>:
+ *
+ * @return int - potentiometer value
+ */
+uint8_t get_pot_value(void) {
+	uint8_t potentiometer_val;
+	ADMUX  = _BV(MUX2) | _BV(ADLAR);
+ 262:	84 e2       	ldi	r24, 0x24	; 36
+ 264:	80 93 7c 00 	sts	0x007C, r24
+	ADCSRA |= (1<<ADSC);
+ 268:	ea e7       	ldi	r30, 0x7A	; 122
+ 26a:	f0 e0       	ldi	r31, 0x00	; 0
+ 26c:	80 81       	ld	r24, Z
+ 26e:	80 64       	ori	r24, 0x40	; 64
+ 270:	80 83       	st	Z, r24
+	while(ADCSRA & (1<<ADSC)) {
+ 272:	80 81       	ld	r24, Z
+ 274:	86 fd       	sbrc	r24, 6
+ 276:	fd cf       	rjmp	.-6      	; 0x272 <get_pot_value+0x10>
+		;  //Wait until conversion finished 
+	}
+	potentiometer_val = ADCH; 
+ 278:	80 91 79 00 	lds	r24, 0x0079
+	return potentiometer_val;
+}
+ 27c:	08 95       	ret
+
+0000027e <__vector_16>:
+
+/*
+ * An interrupt for timer 0 to send to the flipflop 1.
+ */
+ISR (TIMER0_COMPA_vect) {
+ 27e:	1f 92       	push	r1
+ 280:	0f 92       	push	r0
+ 282:	0f b6       	in	r0, 0x3f	; 63
+ 284:	0f 92       	push	r0
+ 286:	11 24       	eor	r1, r1
+ 288:	8f 93       	push	r24
+ 28a:	9f 93       	push	r25
+ 28c:	ef 93       	push	r30
+ 28e:	ff 93       	push	r31
+	PORTD &= ~_BV(PORTD3);
+ 290:	5b 98       	cbi	0x0b, 3	; 11
+	switch(timer0Index) {
+ 292:	80 91 f6 03 	lds	r24, 0x03F6
+ 296:	90 91 f7 03 	lds	r25, 0x03F7
+ 29a:	c0 97       	sbiw	r24, 0x30	; 48
+ 29c:	21 f4       	brne	.+8      	; 0x2a6 <__vector_16+0x28>
+		case SAMPLE_POINTS:
+		timer0Index = 0;
+ 29e:	10 92 f7 03 	sts	0x03F7, r1
+ 2a2:	10 92 f6 03 	sts	0x03F6, r1
+		default:
+		PORTB =	wave_table[timer0Index];
+ 2a6:	e0 91 f6 03 	lds	r30, 0x03F6
+ 2aa:	f0 91 f7 03 	lds	r31, 0x03F7
+ 2ae:	ee 0f       	add	r30, r30
+ 2b0:	ff 1f       	adc	r31, r31
+ 2b2:	80 91 30 05 	lds	r24, 0x0530
+ 2b6:	90 91 31 05 	lds	r25, 0x0531
+ 2ba:	e8 0f       	add	r30, r24
+ 2bc:	f9 1f       	adc	r31, r25
+ 2be:	80 81       	ld	r24, Z
+ 2c0:	85 b9       	out	0x05, r24	; 5
+		timer0Index++;
+ 2c2:	80 91 f6 03 	lds	r24, 0x03F6
+ 2c6:	90 91 f7 03 	lds	r25, 0x03F7
+ 2ca:	01 96       	adiw	r24, 0x01	; 1
+ 2cc:	90 93 f7 03 	sts	0x03F7, r25
+ 2d0:	80 93 f6 03 	sts	0x03F6, r24
+		PORTD |= _BV(PORTD3);
+ 2d4:	5b 9a       	sbi	0x0b, 3	; 11
+	}
+}
+ 2d6:	ff 91       	pop	r31
+ 2d8:	ef 91       	pop	r30
+ 2da:	9f 91       	pop	r25
+ 2dc:	8f 91       	pop	r24
+ 2de:	0f 90       	pop	r0
+ 2e0:	0f be       	out	0x3f, r0	; 63
+ 2e2:	0f 90       	pop	r0
+ 2e4:	1f 90       	pop	r1
+ 2e6:	18 95       	reti
+
+000002e8 <__vector_13>:
+
+/*
+ * An interrupt for timer 1 to send to the flipflop 2.
+ */
+ISR (TIMER1_COMPA_vect) {
+ 2e8:	1f 92       	push	r1
+ 2ea:	0f 92       	push	r0
+ 2ec:	0f b6       	in	r0, 0x3f	; 63
+ 2ee:	0f 92       	push	r0
+ 2f0:	11 24       	eor	r1, r1
+ 2f2:	8f 93       	push	r24
+ 2f4:	9f 93       	push	r25
+ 2f6:	ef 93       	push	r30
+ 2f8:	ff 93       	push	r31
+    PORTD &= ~_BV(PORTD7);
+ 2fa:	5f 98       	cbi	0x0b, 7	; 11
+	switch(timer1Index) {
+ 2fc:	80 91 f8 03 	lds	r24, 0x03F8
+ 300:	90 91 f9 03 	lds	r25, 0x03F9
+ 304:	c0 97       	sbiw	r24, 0x30	; 48
+ 306:	21 f4       	brne	.+8      	; 0x310 <__vector_13+0x28>
+		case SAMPLE_POINTS:
+			timer1Index = 0;
+ 308:	10 92 f9 03 	sts	0x03F9, r1
+ 30c:	10 92 f8 03 	sts	0x03F8, r1
+		default:
+			PORTB =	wave_table[timer1Index];
+ 310:	e0 91 f8 03 	lds	r30, 0x03F8
+ 314:	f0 91 f9 03 	lds	r31, 0x03F9
+ 318:	ee 0f       	add	r30, r30
+ 31a:	ff 1f       	adc	r31, r31
+ 31c:	80 91 30 05 	lds	r24, 0x0530
+ 320:	90 91 31 05 	lds	r25, 0x0531
+ 324:	e8 0f       	add	r30, r24
+ 326:	f9 1f       	adc	r31, r25
+ 328:	80 81       	ld	r24, Z
+ 32a:	85 b9       	out	0x05, r24	; 5
+			timer1Index++;
+ 32c:	80 91 f8 03 	lds	r24, 0x03F8
+ 330:	90 91 f9 03 	lds	r25, 0x03F9
+ 334:	01 96       	adiw	r24, 0x01	; 1
+ 336:	90 93 f9 03 	sts	0x03F9, r25
+ 33a:	80 93 f8 03 	sts	0x03F8, r24
+			PORTD |= _BV(PORTD7);
+ 33e:	5f 9a       	sbi	0x0b, 7	; 11
+	}
+}
+ 340:	ff 91       	pop	r31
+ 342:	ef 91       	pop	r30
+ 344:	9f 91       	pop	r25
+ 346:	8f 91       	pop	r24
+ 348:	0f 90       	pop	r0
+ 34a:	0f be       	out	0x3f, r0	; 63
+ 34c:	0f 90       	pop	r0
+ 34e:	1f 90       	pop	r1
+ 350:	18 95       	reti
+
+00000352 <__vector_9>:
+
+/*
+ * An interrupt for timer 2 to send to the flipflop 3.
+ */
+ISR (TIMER2_COMPA_vect) {
+ 352:	1f 92       	push	r1
+ 354:	0f 92       	push	r0
+ 356:	0f b6       	in	r0, 0x3f	; 63
+ 358:	0f 92       	push	r0
+ 35a:	11 24       	eor	r1, r1
+ 35c:	8f 93       	push	r24
+ 35e:	9f 93       	push	r25
+ 360:	ef 93       	push	r30
+ 362:	ff 93       	push	r31
+	PORTC &= ~_BV(PORTC2);
+ 364:	42 98       	cbi	0x08, 2	; 8
+	switch(timer2Index) {
+ 366:	80 91 f4 03 	lds	r24, 0x03F4
+ 36a:	90 91 f5 03 	lds	r25, 0x03F5
+ 36e:	c0 97       	sbiw	r24, 0x30	; 48
+ 370:	21 f4       	brne	.+8      	; 0x37a <__vector_9+0x28>
+		case SAMPLE_POINTS:
+			timer2Index = 0;
+ 372:	10 92 f5 03 	sts	0x03F5, r1
+ 376:	10 92 f4 03 	sts	0x03F4, r1
+		default:
+			PORTB =	wave_table[timer2Index];
+ 37a:	e0 91 f4 03 	lds	r30, 0x03F4
+ 37e:	f0 91 f5 03 	lds	r31, 0x03F5
+ 382:	ee 0f       	add	r30, r30
+ 384:	ff 1f       	adc	r31, r31
+ 386:	80 91 30 05 	lds	r24, 0x0530
+ 38a:	90 91 31 05 	lds	r25, 0x0531
+ 38e:	e8 0f       	add	r30, r24
+ 390:	f9 1f       	adc	r31, r25
+ 392:	80 81       	ld	r24, Z
+ 394:	85 b9       	out	0x05, r24	; 5
+			timer2Index++;
+ 396:	80 91 f4 03 	lds	r24, 0x03F4
+ 39a:	90 91 f5 03 	lds	r25, 0x03F5
+ 39e:	01 96       	adiw	r24, 0x01	; 1
+ 3a0:	90 93 f5 03 	sts	0x03F5, r25
+ 3a4:	80 93 f4 03 	sts	0x03F4, r24
+			PORTC |= _BV(PORTC2);
+ 3a8:	42 9a       	sbi	0x08, 2	; 8
+	}
+}
+ 3aa:	ff 91       	pop	r31
+ 3ac:	ef 91       	pop	r30
+ 3ae:	9f 91       	pop	r25
+ 3b0:	8f 91       	pop	r24
+ 3b2:	0f 90       	pop	r0
+ 3b4:	0f be       	out	0x3f, r0	; 63
+ 3b6:	0f 90       	pop	r0
+ 3b8:	1f 90       	pop	r1
+ 3ba:	18 95       	reti
+
+000003bc <update_timer0_pre>:
+
+/*
+ * A function for update prescale of timer 0.
+ */
+void update_timer0_pre (int value) {
+	if (value == 1) {
+ 3bc:	81 30       	cpi	r24, 0x01	; 1
+ 3be:	91 05       	cpc	r25, r1
+ 3c0:	19 f4       	brne	.+6      	; 0x3c8 <update_timer0_pre+0xc>
+		TCCR0B = (0<<CS02) | (0<<CS01) | (1<<CS00);
+ 3c2:	81 e0       	ldi	r24, 0x01	; 1
+ 3c4:	85 bd       	out	0x25, r24	; 37
+ 3c6:	08 95       	ret
+		} else if (value == 8) {
+ 3c8:	88 30       	cpi	r24, 0x08	; 8
+ 3ca:	91 05       	cpc	r25, r1
+ 3cc:	19 f4       	brne	.+6      	; 0x3d4 <update_timer0_pre+0x18>
+		TCCR0B = (0<<CS02) | (1<<CS01) | (0<<CS00);
+ 3ce:	82 e0       	ldi	r24, 0x02	; 2
+ 3d0:	85 bd       	out	0x25, r24	; 37
+ 3d2:	08 95       	ret
+		} else if (value == 64) {
+ 3d4:	80 34       	cpi	r24, 0x40	; 64
+ 3d6:	91 05       	cpc	r25, r1
+ 3d8:	11 f4       	brne	.+4      	; 0x3de <update_timer0_pre+0x22>
+		TCCR0B = (0<<CS02) | (1<<CS01) | (1<<CS00);
+ 3da:	83 e0       	ldi	r24, 0x03	; 3
+ 3dc:	85 bd       	out	0x25, r24	; 37
+ 3de:	08 95       	ret
+
+000003e0 <update_time1_pre>:
+
+/*
+ * A function for updating prescale of timer 1.
+ */
+void update_time1_pre (int value) {
+	if (value == 1) {
+ 3e0:	81 30       	cpi	r24, 0x01	; 1
+ 3e2:	91 05       	cpc	r25, r1
+ 3e4:	21 f4       	brne	.+8      	; 0x3ee <update_time1_pre+0xe>
+		TCCR1B = (0<<CS12) | (0<<CS11) | (1<<CS10) | (1<<WGM12);
+ 3e6:	89 e0       	ldi	r24, 0x09	; 9
+ 3e8:	80 93 81 00 	sts	0x0081, r24
+ 3ec:	08 95       	ret
+		} else if (value == 8) {
+ 3ee:	88 30       	cpi	r24, 0x08	; 8
+ 3f0:	91 05       	cpc	r25, r1
+ 3f2:	21 f4       	brne	.+8      	; 0x3fc <update_time1_pre+0x1c>
+		TCCR1B = (0<<CS12) | (1<<CS11) | (0<<CS10) | (1<<WGM12);
+ 3f4:	8a e0       	ldi	r24, 0x0A	; 10
+ 3f6:	80 93 81 00 	sts	0x0081, r24
+ 3fa:	08 95       	ret
+		} else if (value == 64) {
+ 3fc:	80 34       	cpi	r24, 0x40	; 64
+ 3fe:	91 05       	cpc	r25, r1
+ 400:	19 f4       	brne	.+6      	; 0x408 <update_time1_pre+0x28>
+		TCCR1B = (0<<CS12) | (1<<CS11) | (1<<CS10) | (1<<WGM12);
+ 402:	8b e0       	ldi	r24, 0x0B	; 11
+ 404:	80 93 81 00 	sts	0x0081, r24
+ 408:	08 95       	ret
+
+0000040a <update_time2_pre>:
+
+/*
+ * A function for updating prescale of timer 2.
+ */
+void update_time2_pre (int value) {
+	if (value == 1) {
+ 40a:	81 30       	cpi	r24, 0x01	; 1
+ 40c:	91 05       	cpc	r25, r1
+ 40e:	21 f4       	brne	.+8      	; 0x418 <update_time2_pre+0xe>
+		TCCR2B = (0<<CS22) | (0<<CS21) | (1<<CS20);
+ 410:	81 e0       	ldi	r24, 0x01	; 1
+ 412:	80 93 b1 00 	sts	0x00B1, r24
+ 416:	08 95       	ret
+		} else if (value == 8) {
+ 418:	88 30       	cpi	r24, 0x08	; 8
+ 41a:	91 05       	cpc	r25, r1
+ 41c:	21 f4       	brne	.+8      	; 0x426 <update_time2_pre+0x1c>
+		TCCR2B = (0<<CS22) | (1<<CS21) | (0<<CS20);
+ 41e:	82 e0       	ldi	r24, 0x02	; 2
+ 420:	80 93 b1 00 	sts	0x00B1, r24
+ 424:	08 95       	ret
+		} else if (value == 64) {
+ 426:	80 34       	cpi	r24, 0x40	; 64
+ 428:	91 05       	cpc	r25, r1
+ 42a:	19 f4       	brne	.+6      	; 0x432 <update_time2_pre+0x28>
+		TCCR2B = (0<<CS22) | (1<<CS21) | (1<<CS20);
+ 42c:	83 e0       	ldi	r24, 0x03	; 3
+ 42e:	80 93 b1 00 	sts	0x00B1, r24
+ 432:	08 95       	ret
+
+00000434 <play_keyboard>:
+}
+
+/*
+ * A function for the press of a keyboard key.
+ */
+void play_keyboard(int value) {
+ 434:	cf 93       	push	r28
+ 436:	df 93       	push	r29
+	int i;
+	PORTD |= (1<<PORTD5) | (1<<PORTD6);
+ 438:	2b b1       	in	r18, 0x0b	; 11
+ 43a:	20 66       	ori	r18, 0x60	; 96
+ 43c:	2b b9       	out	0x0b, r18	; 11
+	for (i = 0; i < 3; i++)
+	{
+		if (keyboardQueue[i].value == -1)
+ 43e:	20 91 0c 04 	lds	r18, 0x040C
+ 442:	30 91 0d 04 	lds	r19, 0x040D
+ 446:	2f 3f       	cpi	r18, 0xFF	; 255
+ 448:	3f 4f       	sbci	r19, 0xFF	; 255
+ 44a:	c1 f4       	brne	.+48     	; 0x47c <play_keyboard+0x48>
+		{
+			keyboardQueue[i].value = value;
+ 44c:	90 93 0d 04 	sts	0x040D, r25
+ 450:	80 93 0c 04 	sts	0x040C, r24
+			if(i==0) {
+				OCR0A = KeySound[value].OCR;
+ 454:	fc 01       	movw	r30, r24
+ 456:	ee 0f       	add	r30, r30
+ 458:	ff 1f       	adc	r31, r31
+ 45a:	8e 0f       	add	r24, r30
+ 45c:	9f 1f       	adc	r25, r31
+ 45e:	fc 01       	movw	r30, r24
+ 460:	ec 5c       	subi	r30, 0xCC	; 204
+ 462:	fb 4f       	sbci	r31, 0xFB	; 251
+ 464:	80 81       	ld	r24, Z
+ 466:	87 bd       	out	0x27, r24	; 39
+				update_timer0_pre (KeySound[value].PRE);
+ 468:	81 81       	ldd	r24, Z+1	; 0x01
+ 46a:	92 81       	ldd	r25, Z+2	; 0x02
+ 46c:	0e 94 de 01 	call	0x3bc	; 0x3bc <update_timer0_pre>
+				TIMSK0 |= _BV(OCIE0A);
+ 470:	ee e6       	ldi	r30, 0x6E	; 110
+ 472:	f0 e0       	ldi	r31, 0x00	; 0
+ 474:	80 81       	ld	r24, Z
+ 476:	82 60       	ori	r24, 0x02	; 2
+ 478:	80 83       	st	Z, r24
+				return;
+ 47a:	5c c0       	rjmp	.+184    	; 0x534 <play_keyboard+0x100>
+void play_keyboard(int value) {
+	int i;
+	PORTD |= (1<<PORTD5) | (1<<PORTD6);
+	for (i = 0; i < 3; i++)
+	{
+		if (keyboardQueue[i].value == -1)
+ 47c:	20 91 0e 04 	lds	r18, 0x040E
+ 480:	30 91 0f 04 	lds	r19, 0x040F
+ 484:	2f 3f       	cpi	r18, 0xFF	; 255
+ 486:	3f 4f       	sbci	r19, 0xFF	; 255
+ 488:	e1 f4       	brne	.+56     	; 0x4c2 <play_keyboard+0x8e>
+		{
+			keyboardQueue[i].value = value;
+ 48a:	90 93 0f 04 	sts	0x040F, r25
+ 48e:	80 93 0e 04 	sts	0x040E, r24
+				update_timer0_pre (KeySound[value].PRE);
+				TIMSK0 |= _BV(OCIE0A);
+				return;
+			}
+			if(i==1) {
+				OCR1A = KeySound[value].OCR;
+ 492:	fc 01       	movw	r30, r24
+ 494:	ee 0f       	add	r30, r30
+ 496:	ff 1f       	adc	r31, r31
+ 498:	8e 0f       	add	r24, r30
+ 49a:	9f 1f       	adc	r25, r31
+ 49c:	fc 01       	movw	r30, r24
+ 49e:	ec 5c       	subi	r30, 0xCC	; 204
+ 4a0:	fb 4f       	sbci	r31, 0xFB	; 251
+ 4a2:	80 81       	ld	r24, Z
+ 4a4:	90 e0       	ldi	r25, 0x00	; 0
+ 4a6:	90 93 89 00 	sts	0x0089, r25
+ 4aa:	80 93 88 00 	sts	0x0088, r24
+				update_time1_pre(KeySound[value].PRE);
+ 4ae:	81 81       	ldd	r24, Z+1	; 0x01
+ 4b0:	92 81       	ldd	r25, Z+2	; 0x02
+ 4b2:	0e 94 f0 01 	call	0x3e0	; 0x3e0 <update_time1_pre>
+				TIMSK1 |= _BV(OCIE1A);
+ 4b6:	ef e6       	ldi	r30, 0x6F	; 111
+ 4b8:	f0 e0       	ldi	r31, 0x00	; 0
+ 4ba:	80 81       	ld	r24, Z
+ 4bc:	82 60       	ori	r24, 0x02	; 2
+ 4be:	80 83       	st	Z, r24
+				return;
+ 4c0:	39 c0       	rjmp	.+114    	; 0x534 <play_keyboard+0x100>
+void play_keyboard(int value) {
+	int i;
+	PORTD |= (1<<PORTD5) | (1<<PORTD6);
+	for (i = 0; i < 3; i++)
+	{
+		if (keyboardQueue[i].value == -1)
+ 4c2:	20 91 10 04 	lds	r18, 0x0410
+ 4c6:	30 91 11 04 	lds	r19, 0x0411
+ 4ca:	2f 3f       	cpi	r18, 0xFF	; 255
+ 4cc:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4ce:	c9 f4       	brne	.+50     	; 0x502 <play_keyboard+0xce>
+		{
+			keyboardQueue[i].value = value;
+ 4d0:	90 93 11 04 	sts	0x0411, r25
+ 4d4:	80 93 10 04 	sts	0x0410, r24
+				update_time1_pre(KeySound[value].PRE);
+				TIMSK1 |= _BV(OCIE1A);
+				return;
+			}
+			if(i==2) {
+				OCR2A = KeySound[value].OCR;
+ 4d8:	fc 01       	movw	r30, r24
+ 4da:	ee 0f       	add	r30, r30
+ 4dc:	ff 1f       	adc	r31, r31
+ 4de:	8e 0f       	add	r24, r30
+ 4e0:	9f 1f       	adc	r25, r31
+ 4e2:	fc 01       	movw	r30, r24
+ 4e4:	ec 5c       	subi	r30, 0xCC	; 204
+ 4e6:	fb 4f       	sbci	r31, 0xFB	; 251
+ 4e8:	80 81       	ld	r24, Z
+ 4ea:	80 93 b3 00 	sts	0x00B3, r24
+				update_time2_pre(KeySound[value].PRE);
+ 4ee:	81 81       	ldd	r24, Z+1	; 0x01
+ 4f0:	92 81       	ldd	r25, Z+2	; 0x02
+ 4f2:	0e 94 05 02 	call	0x40a	; 0x40a <update_time2_pre>
+				TIMSK2 |= _BV(OCIE2A);
+ 4f6:	e0 e7       	ldi	r30, 0x70	; 112
+ 4f8:	f0 e0       	ldi	r31, 0x00	; 0
+ 4fa:	80 81       	ld	r24, Z
+ 4fc:	82 60       	ori	r24, 0x02	; 2
+ 4fe:	80 83       	st	Z, r24
+				return;
+ 500:	19 c0       	rjmp	.+50     	; 0x534 <play_keyboard+0x100>
+			}
+		}
+					
+	}
+	OCR0A =KeySound[value].OCR;
+ 502:	ec 01       	movw	r28, r24
+ 504:	cc 0f       	add	r28, r28
+ 506:	dd 1f       	adc	r29, r29
+ 508:	8c 0f       	add	r24, r28
+ 50a:	9d 1f       	adc	r25, r29
+ 50c:	ec 01       	movw	r28, r24
+ 50e:	cc 5c       	subi	r28, 0xCC	; 204
+ 510:	db 4f       	sbci	r29, 0xFB	; 251
+ 512:	88 81       	ld	r24, Y
+ 514:	87 bd       	out	0x27, r24	; 39
+	update_timer0_pre(KeySound[value].PRE);
+ 516:	89 81       	ldd	r24, Y+1	; 0x01
+ 518:	9a 81       	ldd	r25, Y+2	; 0x02
+ 51a:	0e 94 de 01 	call	0x3bc	; 0x3bc <update_timer0_pre>
+	TIMSK0 |= _BV(OCIE0A);
+ 51e:	ee e6       	ldi	r30, 0x6E	; 110
+ 520:	f0 e0       	ldi	r31, 0x00	; 0
+ 522:	80 81       	ld	r24, Z
+ 524:	82 60       	ori	r24, 0x02	; 2
+ 526:	80 83       	st	Z, r24
+	buttonQueue[0].value = KeySound[value].OCR;
+ 528:	88 81       	ld	r24, Y
+ 52a:	90 e0       	ldi	r25, 0x00	; 0
+ 52c:	90 93 13 04 	sts	0x0413, r25
+ 530:	80 93 12 04 	sts	0x0412, r24
+}
+ 534:	df 91       	pop	r29
+ 536:	cf 91       	pop	r28
+ 538:	08 95       	ret
+
+0000053a <__vector_20>:
+}
+
+/*
+ * An interrupt for the USART communication.
+ */
+ISR(USART0_RX_vect) {
+ 53a:	1f 92       	push	r1
+ 53c:	0f 92       	push	r0
+ 53e:	0f b6       	in	r0, 0x3f	; 63
+ 540:	0f 92       	push	r0
+ 542:	11 24       	eor	r1, r1
+ 544:	2f 93       	push	r18
+ 546:	3f 93       	push	r19
+ 548:	4f 93       	push	r20
+ 54a:	5f 93       	push	r21
+ 54c:	6f 93       	push	r22
+ 54e:	7f 93       	push	r23
+ 550:	8f 93       	push	r24
+ 552:	9f 93       	push	r25
+ 554:	af 93       	push	r26
+ 556:	bf 93       	push	r27
+ 558:	ef 93       	push	r30
+ 55a:	ff 93       	push	r31
+	value = UDR0;
+ 55c:	80 91 c6 00 	lds	r24, 0x00C6
+ 560:	90 e0       	ldi	r25, 0x00	; 0
+ 562:	90 93 33 05 	sts	0x0533, r25
+ 566:	80 93 32 05 	sts	0x0532, r24
+	disableSleep = value;
+ 56a:	80 91 32 05 	lds	r24, 0x0532
+ 56e:	90 91 33 05 	lds	r25, 0x0533
+ 572:	90 93 03 01 	sts	0x0103, r25
+ 576:	80 93 02 01 	sts	0x0102, r24
+	if (value >167) {
+ 57a:	80 91 32 05 	lds	r24, 0x0532
+ 57e:	90 91 33 05 	lds	r25, 0x0533
+ 582:	88 3a       	cpi	r24, 0xA8	; 168
+ 584:	91 05       	cpc	r25, r1
+ 586:	a0 f0       	brcs	.+40     	; 0x5b0 <__vector_20+0x76>
+		update_button_freq(value, buttonIndex);
+ 588:	80 91 32 05 	lds	r24, 0x0532
+ 58c:	90 91 33 05 	lds	r25, 0x0533
+ 590:	60 91 04 04 	lds	r22, 0x0404
+ 594:	70 91 05 04 	lds	r23, 0x0405
+ 598:	0e 94 17 01 	call	0x22e	; 0x22e <update_button_freq>
+		buttonIndex++;
+ 59c:	80 91 04 04 	lds	r24, 0x0404
+ 5a0:	90 91 05 04 	lds	r25, 0x0405
+ 5a4:	01 96       	adiw	r24, 0x01	; 1
+ 5a6:	90 93 05 04 	sts	0x0405, r25
+ 5aa:	80 93 04 04 	sts	0x0404, r24
+ 5ae:	22 c0       	rjmp	.+68     	; 0x5f4 <__vector_20+0xba>
+		
+	} else if (value > 83 && value <= 167) {
+ 5b0:	80 91 32 05 	lds	r24, 0x0532
+ 5b4:	90 91 33 05 	lds	r25, 0x0533
+ 5b8:	84 35       	cpi	r24, 0x54	; 84
+ 5ba:	91 05       	cpc	r25, r1
+ 5bc:	70 f0       	brcs	.+28     	; 0x5da <__vector_20+0xa0>
+ 5be:	80 91 32 05 	lds	r24, 0x0532
+ 5c2:	90 91 33 05 	lds	r25, 0x0533
+ 5c6:	88 3a       	cpi	r24, 0xA8	; 168
+ 5c8:	91 05       	cpc	r25, r1
+ 5ca:	38 f4       	brcc	.+14     	; 0x5da <__vector_20+0xa0>
+		stop_keyboard(value);
+ 5cc:	80 91 32 05 	lds	r24, 0x0532
+ 5d0:	90 91 33 05 	lds	r25, 0x0533
+ 5d4:	0e 94 cd 00 	call	0x19a	; 0x19a <stop_keyboard>
+ 5d8:	0d c0       	rjmp	.+26     	; 0x5f4 <__vector_20+0xba>
+	} else if (value <= 83) {
+ 5da:	80 91 32 05 	lds	r24, 0x0532
+ 5de:	90 91 33 05 	lds	r25, 0x0533
+ 5e2:	84 35       	cpi	r24, 0x54	; 84
+ 5e4:	91 05       	cpc	r25, r1
+ 5e6:	30 f4       	brcc	.+12     	; 0x5f4 <__vector_20+0xba>
+		play_keyboard(value);
+ 5e8:	80 91 32 05 	lds	r24, 0x0532
+ 5ec:	90 91 33 05 	lds	r25, 0x0533
+ 5f0:	0e 94 1a 02 	call	0x434	; 0x434 <play_keyboard>
+	}
+	if (buttonIndex == 8)
+ 5f4:	80 91 04 04 	lds	r24, 0x0404
+ 5f8:	90 91 05 04 	lds	r25, 0x0405
+ 5fc:	08 97       	sbiw	r24, 0x08	; 8
+ 5fe:	29 f4       	brne	.+10     	; 0x60a <__vector_20+0xd0>
+	{
+		buttonIndex = 0;
+ 600:	10 92 05 04 	sts	0x0405, r1
+ 604:	10 92 04 04 	sts	0x0404, r1
+		PORTD &= ~(_BV(PORTD6));
+ 608:	5e 98       	cbi	0x0b, 6	; 11
+	}
+}
+ 60a:	ff 91       	pop	r31
+ 60c:	ef 91       	pop	r30
+ 60e:	bf 91       	pop	r27
+ 610:	af 91       	pop	r26
+ 612:	9f 91       	pop	r25
+ 614:	8f 91       	pop	r24
+ 616:	7f 91       	pop	r23
+ 618:	6f 91       	pop	r22
+ 61a:	5f 91       	pop	r21
+ 61c:	4f 91       	pop	r20
+ 61e:	3f 91       	pop	r19
+ 620:	2f 91       	pop	r18
+ 622:	0f 90       	pop	r0
+ 624:	0f be       	out	0x3f, r0	; 63
+ 626:	0f 90       	pop	r0
+ 628:	1f 90       	pop	r1
+ 62a:	18 95       	reti
+
+0000062c <__vector_8>:
+
+/* 
+ * The interrupt for the watch dog timer.
+ */
+ISR(WDT_vect)
+{
+ 62c:	1f 92       	push	r1
+ 62e:	0f 92       	push	r0
+ 630:	0f b6       	in	r0, 0x3f	; 63
+ 632:	0f 92       	push	r0
+ 634:	11 24       	eor	r1, r1
+ 636:	8f 93       	push	r24
+ 638:	9f 93       	push	r25
+	//Burst of fice 0.1Hz pulses
+	if (sleepCounter != 0)
+ 63a:	80 91 00 01 	lds	r24, 0x0100
+ 63e:	90 91 01 01 	lds	r25, 0x0101
+ 642:	00 97       	sbiw	r24, 0x00	; 0
+ 644:	51 f0       	breq	.+20     	; 0x65a <__vector_8+0x2e>
+	{
+		sleepflag = 0;
+ 646:	10 92 fb 03 	sts	0x03FB, r1
+ 64a:	10 92 fa 03 	sts	0x03FA, r1
+		sleepCounter--;
+ 64e:	01 97       	sbiw	r24, 0x01	; 1
+ 650:	90 93 01 01 	sts	0x0101, r25
+ 654:	80 93 00 01 	sts	0x0100, r24
+ 658:	2e c0       	rjmp	.+92     	; 0x6b6 <__vector_8+0x8a>
+	} else {
+		if (sleepflag == 0)
+ 65a:	80 91 fa 03 	lds	r24, 0x03FA
+ 65e:	90 91 fb 03 	lds	r25, 0x03FB
+ 662:	89 2b       	or	r24, r25
+ 664:	39 f4       	brne	.+14     	; 0x674 <__vector_8+0x48>
+		{
+			light_delay = 156;
+ 666:	8c e9       	ldi	r24, 0x9C	; 156
+ 668:	90 e0       	ldi	r25, 0x00	; 0
+ 66a:	90 93 09 04 	sts	0x0409, r25
+ 66e:	80 93 08 04 	sts	0x0408, r24
+			PORTD &= ~(1<<PORTD4);
+ 672:	5c 98       	cbi	0x0b, 4	; 11
+		}
+		sleepflag = 1;
+ 674:	81 e0       	ldi	r24, 0x01	; 1
+ 676:	90 e0       	ldi	r25, 0x00	; 0
+ 678:	90 93 fb 03 	sts	0x03FB, r25
+ 67c:	80 93 fa 03 	sts	0x03FA, r24
+
+		if(light_delay) {
+ 680:	80 91 08 04 	lds	r24, 0x0408
+ 684:	90 91 09 04 	lds	r25, 0x0409
+ 688:	00 97       	sbiw	r24, 0x00	; 0
+ 68a:	31 f0       	breq	.+12     	; 0x698 <__vector_8+0x6c>
+			light_delay--;
+ 68c:	01 97       	sbiw	r24, 0x01	; 1
+ 68e:	90 93 09 04 	sts	0x0409, r25
+ 692:	80 93 08 04 	sts	0x0408, r24
+ 696:	07 c0       	rjmp	.+14     	; 0x6a6 <__vector_8+0x7a>
+		} else {
+			light_delay = 156;
+ 698:	8c e9       	ldi	r24, 0x9C	; 156
+ 69a:	90 e0       	ldi	r25, 0x00	; 0
+ 69c:	90 93 09 04 	sts	0x0409, r25
+ 6a0:	80 93 08 04 	sts	0x0408, r24
+			PORTD &= ~(1<<PORTD4);
+ 6a4:	5c 98       	cbi	0x0b, 4	; 11
+		}
+		if(light_delay <= 1) {
+ 6a6:	80 91 08 04 	lds	r24, 0x0408
+ 6aa:	90 91 09 04 	lds	r25, 0x0409
+ 6ae:	02 97       	sbiw	r24, 0x02	; 2
+ 6b0:	14 f4       	brge	.+4      	; 0x6b6 <__vector_8+0x8a>
+			PORTD = (1<<PORTD4);
+ 6b2:	80 e1       	ldi	r24, 0x10	; 16
+ 6b4:	8b b9       	out	0x0b, r24	; 11
+		}
+	}
+}
+ 6b6:	9f 91       	pop	r25
+ 6b8:	8f 91       	pop	r24
+ 6ba:	0f 90       	pop	r0
+ 6bc:	0f be       	out	0x3f, r0	; 63
+ 6be:	0f 90       	pop	r0
+ 6c0:	1f 90       	pop	r1
+ 6c2:	18 95       	reti
+
+000006c4 <run_sleep>:
+
+/*  
+ * A function for running sleep mode.
+ */
+void run_sleep(void) {
+	set_sleep_mode(SLEEP_MODE_IDLE);
+ 6c4:	83 b7       	in	r24, 0x33	; 51
+ 6c6:	81 7f       	andi	r24, 0xF1	; 241
+ 6c8:	83 bf       	out	0x33, r24	; 51
+	cli();
+ 6ca:	f8 94       	cli
+	sleep_enable();
+ 6cc:	83 b7       	in	r24, 0x33	; 51
+ 6ce:	81 60       	ori	r24, 0x01	; 1
+ 6d0:	83 bf       	out	0x33, r24	; 51
+	sei();
+ 6d2:	78 94       	sei
+	sleep_cpu();
+ 6d4:	88 95       	sleep
+	sleep_disable();
+ 6d6:	83 b7       	in	r24, 0x33	; 51
+ 6d8:	8e 7f       	andi	r24, 0xFE	; 254
+ 6da:	83 bf       	out	0x33, r24	; 51
+	sei();
+ 6dc:	78 94       	sei
+ 6de:	08 95       	ret
+
+000006e0 <update_wave_type>:
+
+/*  
+ * A function for the update of wave type.
+ */
+void update_wave_type(void) {
+	sleepCounter = 313;
+ 6e0:	89 e3       	ldi	r24, 0x39	; 57
+ 6e2:	91 e0       	ldi	r25, 0x01	; 1
+ 6e4:	90 93 01 01 	sts	0x0101, r25
+ 6e8:	80 93 00 01 	sts	0x0100, r24
+	if((switch_reading & 0x01) == 0) {
+ 6ec:	20 91 18 04 	lds	r18, 0x0418
+ 6f0:	30 91 19 04 	lds	r19, 0x0419
+ 6f4:	20 fd       	sbrc	r18, 0
+ 6f6:	06 c0       	rjmp	.+12     	; 0x704 <update_wave_type+0x24>
+		wave_table = sawTable;
+ 6f8:	84 ed       	ldi	r24, 0xD4	; 212
+ 6fa:	92 e0       	ldi	r25, 0x02	; 2
+ 6fc:	90 93 31 05 	sts	0x0531, r25
+ 700:	80 93 30 05 	sts	0x0530, r24
+	}
+	if((switch_reading & 0x02) == 0) {
+ 704:	21 fd       	sbrc	r18, 1
+ 706:	06 c0       	rjmp	.+12     	; 0x714 <update_wave_type+0x34>
+		wave_table = triTable;
+ 708:	84 e3       	ldi	r24, 0x34	; 52
+ 70a:	93 e0       	ldi	r25, 0x03	; 3
+ 70c:	90 93 31 05 	sts	0x0531, r25
+ 710:	80 93 30 05 	sts	0x0530, r24
+	}
+	if((switch_reading & 0x04) == 0) {
+ 714:	22 fd       	sbrc	r18, 2
+ 716:	06 c0       	rjmp	.+12     	; 0x724 <update_wave_type+0x44>
+		wave_table = squTable;
+ 718:	84 e7       	ldi	r24, 0x74	; 116
+ 71a:	92 e0       	ldi	r25, 0x02	; 2
+ 71c:	90 93 31 05 	sts	0x0531, r25
+ 720:	80 93 30 05 	sts	0x0530, r24
+	}
+	if((switch_reading & 0x08) == 0) {
+ 724:	23 fd       	sbrc	r18, 3
+ 726:	06 c0       	rjmp	.+12     	; 0x734 <update_wave_type+0x54>
+		wave_table = sinTable;
+ 728:	84 e9       	ldi	r24, 0x94	; 148
+ 72a:	93 e0       	ldi	r25, 0x03	; 3
+ 72c:	90 93 31 05 	sts	0x0531, r25
+ 730:	80 93 30 05 	sts	0x0530, r24
+	}
+	last_switch_reading = switch_reading;
+ 734:	20 93 32 04 	sts	0x0432, r18
+ 738:	30 93 33 04 	sts	0x0433, r19
+ 73c:	08 95       	ret
+
+0000073e <run_i2c>:
+/* 
+ * Starts i2c, if successful sends a value passed into the function 
+ * to the variables resistor.
+ *
+ */
+void run_i2c(uint8_t pot) {
+ 73e:	cf 93       	push	r28
+ 740:	c8 2f       	mov	r28, r24
+	unsigned char ret;
+	ret = i2c_start(AD5241);      
+ 742:	88 e5       	ldi	r24, 0x58	; 88
+ 744:	0e 94 ce 05 	call	0xb9c	; 0xb9c <i2c_start>
+	if (ret) {
+ 748:	88 23       	and	r24, r24
+ 74a:	19 f0       	breq	.+6      	; 0x752 <run_i2c+0x14>
+		i2c_stop();
+ 74c:	0e 94 f5 05 	call	0xbea	; 0xbea <i2c_stop>
+ 750:	08 c0       	rjmp	.+16     	; 0x762 <run_i2c+0x24>
+		} else {
+		ret  = i2c_write(0b00000000);   
+ 752:	80 e0       	ldi	r24, 0x00	; 0
+ 754:	0e 94 fe 05 	call	0xbfc	; 0xbfc <i2c_write>
+		ret = i2c_write(pot);
+ 758:	8c 2f       	mov	r24, r28
+ 75a:	0e 94 fe 05 	call	0xbfc	; 0xbfc <i2c_write>
+		i2c_stop();					
+ 75e:	0e 94 f5 05 	call	0xbea	; 0xbea <i2c_stop>
+	}
+}
+ 762:	cf 91       	pop	r28
+ 764:	08 95       	ret
+
+00000766 <start_wave>:
+
+/*
+ * Start timer interrupt to generate wave
+ *
+ */
+void start_wave(int button) {
+ 766:	cf 93       	push	r28
+ 768:	df 93       	push	r29
+ 76a:	ec 01       	movw	r28, r24
+	int i;
+	for(i=0; i<3; i++) {
+		if(buttonQueue[i].value == -1) {
+ 76c:	80 91 12 04 	lds	r24, 0x0412
+ 770:	90 91 13 04 	lds	r25, 0x0413
+ 774:	01 96       	adiw	r24, 0x01	; 1
+ 776:	b9 f4       	brne	.+46     	; 0x7a6 <start_wave+0x40>
+			buttonQueue[i].value = button;
+ 778:	d0 93 13 04 	sts	0x0413, r29
+ 77c:	c0 93 12 04 	sts	0x0412, r28
+			if(i==0) {
+				OCR0A = ButtonSound[button].OCR;
+ 780:	ce 01       	movw	r24, r28
+ 782:	88 0f       	add	r24, r24
+ 784:	99 1f       	adc	r25, r25
+ 786:	c8 0f       	add	r28, r24
+ 788:	d9 1f       	adc	r29, r25
+ 78a:	c6 5e       	subi	r28, 0xE6	; 230
+ 78c:	db 4f       	sbci	r29, 0xFB	; 251
+ 78e:	88 81       	ld	r24, Y
+ 790:	87 bd       	out	0x27, r24	; 39
+				update_timer0_pre(ButtonSound[button].PRE);
+ 792:	89 81       	ldd	r24, Y+1	; 0x01
+ 794:	9a 81       	ldd	r25, Y+2	; 0x02
+ 796:	0e 94 de 01 	call	0x3bc	; 0x3bc <update_timer0_pre>
+				TIMSK0 |= _BV(OCIE0A);
+ 79a:	ee e6       	ldi	r30, 0x6E	; 110
+ 79c:	f0 e0       	ldi	r31, 0x00	; 0
+ 79e:	80 81       	ld	r24, Z
+ 7a0:	82 60       	ori	r24, 0x02	; 2
+ 7a2:	80 83       	st	Z, r24
+				return;
+ 7a4:	55 c0       	rjmp	.+170    	; 0x850 <start_wave+0xea>
+ *
+ */
+void start_wave(int button) {
+	int i;
+	for(i=0; i<3; i++) {
+		if(buttonQueue[i].value == -1) {
+ 7a6:	80 91 14 04 	lds	r24, 0x0414
+ 7aa:	90 91 15 04 	lds	r25, 0x0415
+ 7ae:	01 96       	adiw	r24, 0x01	; 1
+ 7b0:	d9 f4       	brne	.+54     	; 0x7e8 <start_wave+0x82>
+			buttonQueue[i].value = button;
+ 7b2:	d0 93 15 04 	sts	0x0415, r29
+ 7b6:	c0 93 14 04 	sts	0x0414, r28
+				update_timer0_pre(ButtonSound[button].PRE);
+				TIMSK0 |= _BV(OCIE0A);
+				return;
+			}
+			if(i==1) {
+				OCR1A = ButtonSound[button].OCR;
+ 7ba:	ce 01       	movw	r24, r28
+ 7bc:	88 0f       	add	r24, r24
+ 7be:	99 1f       	adc	r25, r25
+ 7c0:	c8 0f       	add	r28, r24
+ 7c2:	d9 1f       	adc	r29, r25
+ 7c4:	c6 5e       	subi	r28, 0xE6	; 230
+ 7c6:	db 4f       	sbci	r29, 0xFB	; 251
+ 7c8:	88 81       	ld	r24, Y
+ 7ca:	90 e0       	ldi	r25, 0x00	; 0
+ 7cc:	90 93 89 00 	sts	0x0089, r25
+ 7d0:	80 93 88 00 	sts	0x0088, r24
+				update_time1_pre(ButtonSound[button].PRE);
+ 7d4:	89 81       	ldd	r24, Y+1	; 0x01
+ 7d6:	9a 81       	ldd	r25, Y+2	; 0x02
+ 7d8:	0e 94 f0 01 	call	0x3e0	; 0x3e0 <update_time1_pre>
+				
+				TIMSK1 |= _BV(OCIE1A);
+ 7dc:	ef e6       	ldi	r30, 0x6F	; 111
+ 7de:	f0 e0       	ldi	r31, 0x00	; 0
+ 7e0:	80 81       	ld	r24, Z
+ 7e2:	82 60       	ori	r24, 0x02	; 2
+ 7e4:	80 83       	st	Z, r24
+				return;
+ 7e6:	34 c0       	rjmp	.+104    	; 0x850 <start_wave+0xea>
+ *
+ */
+void start_wave(int button) {
+	int i;
+	for(i=0; i<3; i++) {
+		if(buttonQueue[i].value == -1) {
+ 7e8:	80 91 16 04 	lds	r24, 0x0416
+ 7ec:	90 91 17 04 	lds	r25, 0x0417
+ 7f0:	01 96       	adiw	r24, 0x01	; 1
+ 7f2:	c1 f4       	brne	.+48     	; 0x824 <start_wave+0xbe>
+			buttonQueue[i].value = button;
+ 7f4:	d0 93 17 04 	sts	0x0417, r29
+ 7f8:	c0 93 16 04 	sts	0x0416, r28
+				
+				TIMSK1 |= _BV(OCIE1A);
+				return;
+			}
+			if(i==2) {
+				OCR2A = ButtonSound[button].OCR;
+ 7fc:	ce 01       	movw	r24, r28
+ 7fe:	88 0f       	add	r24, r24
+ 800:	99 1f       	adc	r25, r25
+ 802:	c8 0f       	add	r28, r24
+ 804:	d9 1f       	adc	r29, r25
+ 806:	c6 5e       	subi	r28, 0xE6	; 230
+ 808:	db 4f       	sbci	r29, 0xFB	; 251
+ 80a:	88 81       	ld	r24, Y
+ 80c:	80 93 b3 00 	sts	0x00B3, r24
+				update_time2_pre(ButtonSound[button].PRE);
+ 810:	89 81       	ldd	r24, Y+1	; 0x01
+ 812:	9a 81       	ldd	r25, Y+2	; 0x02
+ 814:	0e 94 05 02 	call	0x40a	; 0x40a <update_time2_pre>
+				TIMSK2 |= _BV(OCIE2A);
+ 818:	e0 e7       	ldi	r30, 0x70	; 112
+ 81a:	f0 e0       	ldi	r31, 0x00	; 0
+ 81c:	80 81       	ld	r24, Z
+ 81e:	82 60       	ori	r24, 0x02	; 2
+ 820:	80 83       	st	Z, r24
+				return;
+ 822:	16 c0       	rjmp	.+44     	; 0x850 <start_wave+0xea>
+			}
+		}
+	}
+	
+	OCR0A = ButtonSound[button].OCR;
+ 824:	fe 01       	movw	r30, r28
+ 826:	ee 0f       	add	r30, r30
+ 828:	ff 1f       	adc	r31, r31
+ 82a:	ec 0f       	add	r30, r28
+ 82c:	fd 1f       	adc	r31, r29
+ 82e:	e6 5e       	subi	r30, 0xE6	; 230
+ 830:	fb 4f       	sbci	r31, 0xFB	; 251
+ 832:	80 81       	ld	r24, Z
+ 834:	87 bd       	out	0x27, r24	; 39
+	update_time2_pre(ButtonSound[button].PRE);
+ 836:	81 81       	ldd	r24, Z+1	; 0x01
+ 838:	92 81       	ldd	r25, Z+2	; 0x02
+ 83a:	0e 94 05 02 	call	0x40a	; 0x40a <update_time2_pre>
+	TIMSK0 |= _BV(OCIE0A);
+ 83e:	ee e6       	ldi	r30, 0x6E	; 110
+ 840:	f0 e0       	ldi	r31, 0x00	; 0
+ 842:	80 81       	ld	r24, Z
+ 844:	82 60       	ori	r24, 0x02	; 2
+ 846:	80 83       	st	Z, r24
+	buttonQueue[0].value = button;
+ 848:	d0 93 13 04 	sts	0x0413, r29
+ 84c:	c0 93 12 04 	sts	0x0412, r28
+	
+}
+ 850:	df 91       	pop	r29
+ 852:	cf 91       	pop	r28
+ 854:	08 95       	ret
+
+00000856 <stop_wave>:
+ * Stop timer interrupt to stop wave
+ *
+ */
+void stop_wave(int button) {
+	int i;
+	PORTD &= ~(_BV(PORTD5));
+ 856:	5d 98       	cbi	0x0b, 5	; 11
+	for(i=0; i<3; i++) {
+		if(buttonQueue[i].value == button) {
+ 858:	20 91 12 04 	lds	r18, 0x0412
+ 85c:	30 91 13 04 	lds	r19, 0x0413
+ 860:	28 17       	cp	r18, r24
+ 862:	39 07       	cpc	r19, r25
+ 864:	49 f5       	brne	.+82     	; 0x8b8 <stop_wave+0x62>
+			if(i==0) {
+				TIMSK0 = 0;
+ 866:	10 92 6e 00 	sts	0x006E, r1
+				TIMSK1 = 0;
+			}
+			if(i==2) {
+				TIMSK2 = 0;
+			}
+			buttonQueue[i].value = -1;
+ 86a:	2f ef       	ldi	r18, 0xFF	; 255
+ 86c:	3f ef       	ldi	r19, 0xFF	; 255
+ 86e:	30 93 13 04 	sts	0x0413, r19
+ 872:	20 93 12 04 	sts	0x0412, r18
+ 876:	20 c0       	rjmp	.+64     	; 0x8b8 <stop_wave+0x62>
+		if(buttonQueue[i].value == button) {
+			if(i==0) {
+				TIMSK0 = 0;
+			}
+			if(i==1) {
+				TIMSK1 = 0;
+ 878:	10 92 6f 00 	sts	0x006F, r1
+			}
+			if(i==2) {
+				TIMSK2 = 0;
+			}
+			buttonQueue[i].value = -1;
+ 87c:	2f ef       	ldi	r18, 0xFF	; 255
+ 87e:	3f ef       	ldi	r19, 0xFF	; 255
+ 880:	30 93 15 04 	sts	0x0415, r19
+ 884:	20 93 14 04 	sts	0x0414, r18
+ */
+void stop_wave(int button) {
+	int i;
+	PORTD &= ~(_BV(PORTD5));
+	for(i=0; i<3; i++) {
+		if(buttonQueue[i].value == button) {
+ 888:	20 91 16 04 	lds	r18, 0x0416
+ 88c:	30 91 17 04 	lds	r19, 0x0417
+ 890:	28 17       	cp	r18, r24
+ 892:	39 07       	cpc	r19, r25
+ 894:	c9 f4       	brne	.+50     	; 0x8c8 <stop_wave+0x72>
+ 896:	07 c0       	rjmp	.+14     	; 0x8a6 <stop_wave+0x50>
+ 898:	20 91 16 04 	lds	r18, 0x0416
+ 89c:	30 91 17 04 	lds	r19, 0x0417
+ 8a0:	28 17       	cp	r18, r24
+ 8a2:	39 07       	cpc	r19, r25
+ 8a4:	89 f4       	brne	.+34     	; 0x8c8 <stop_wave+0x72>
+			}
+			if(i==1) {
+				TIMSK1 = 0;
+			}
+			if(i==2) {
+				TIMSK2 = 0;
+ 8a6:	10 92 70 00 	sts	0x0070, r1
+			}
+			buttonQueue[i].value = -1;
+ 8aa:	8f ef       	ldi	r24, 0xFF	; 255
+ 8ac:	9f ef       	ldi	r25, 0xFF	; 255
+ 8ae:	90 93 17 04 	sts	0x0417, r25
+ 8b2:	80 93 16 04 	sts	0x0416, r24
+ 8b6:	08 95       	ret
+ */
+void stop_wave(int button) {
+	int i;
+	PORTD &= ~(_BV(PORTD5));
+	for(i=0; i<3; i++) {
+		if(buttonQueue[i].value == button) {
+ 8b8:	20 91 14 04 	lds	r18, 0x0414
+ 8bc:	30 91 15 04 	lds	r19, 0x0415
+ 8c0:	28 17       	cp	r18, r24
+ 8c2:	39 07       	cpc	r19, r25
+ 8c4:	49 f7       	brne	.-46     	; 0x898 <stop_wave+0x42>
+ 8c6:	d8 cf       	rjmp	.-80     	; 0x878 <stop_wave+0x22>
+ 8c8:	08 95       	ret
+
+000008ca <generate_notes>:
+/* 
+ * Register button presses and turn on LED to indicate to user.
+ */
+void generate_notes(void) {
+
+	buttonAReading = PINA;
+ 8ca:	80 b1       	in	r24, 0x00	; 0
+ 8cc:	90 e0       	ldi	r25, 0x00	; 0
+ 8ce:	90 93 03 04 	sts	0x0403, r25
+ 8d2:	80 93 02 04 	sts	0x0402, r24
+	buttonCReading = PINC;
+ 8d6:	26 b1       	in	r18, 0x06	; 6
+ 8d8:	82 2f       	mov	r24, r18
+ 8da:	90 e0       	ldi	r25, 0x00	; 0
+ 8dc:	90 93 01 04 	sts	0x0401, r25
+ 8e0:	80 93 00 04 	sts	0x0400, r24
+	
+	// The first button is pressed
+	if ((buttonCReading & 0x08) && !(lastButtonCReading & 0x08))	{
+ 8e4:	23 ff       	sbrs	r18, 3
+ 8e6:	09 c0       	rjmp	.+18     	; 0x8fa <generate_notes+0x30>
+ 8e8:	80 91 fc 03 	lds	r24, 0x03FC
+ 8ec:	83 fd       	sbrc	r24, 3
+ 8ee:	0d c0       	rjmp	.+26     	; 0x90a <__stack+0xb>
+		start_wave(0);
+ 8f0:	80 e0       	ldi	r24, 0x00	; 0
+ 8f2:	90 e0       	ldi	r25, 0x00	; 0
+ 8f4:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ 8f8:	08 c0       	rjmp	.+16     	; 0x90a <__stack+0xb>
+	} 
+	// The first button is released
+	else if (!(buttonCReading & 0x08) && (lastButtonCReading & 0x08))	{
+ 8fa:	80 91 fc 03 	lds	r24, 0x03FC
+ 8fe:	83 ff       	sbrs	r24, 3
+ 900:	04 c0       	rjmp	.+8      	; 0x90a <__stack+0xb>
+		stop_wave(0);
+ 902:	80 e0       	ldi	r24, 0x00	; 0
+ 904:	90 e0       	ldi	r25, 0x00	; 0
+ 906:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+	}
+	
+	// The second button is pressed
+	if ((buttonCReading & 0x10) && !(lastButtonCReading & 0x10))	{
+ 90a:	80 91 00 04 	lds	r24, 0x0400
+ 90e:	84 ff       	sbrs	r24, 4
+ 910:	09 c0       	rjmp	.+18     	; 0x924 <__stack+0x25>
+ 912:	80 91 fc 03 	lds	r24, 0x03FC
+ 916:	84 fd       	sbrc	r24, 4
+ 918:	0d c0       	rjmp	.+26     	; 0x934 <__stack+0x35>
+		start_wave(1);
+ 91a:	81 e0       	ldi	r24, 0x01	; 1
+ 91c:	90 e0       	ldi	r25, 0x00	; 0
+ 91e:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ 922:	08 c0       	rjmp	.+16     	; 0x934 <__stack+0x35>
+	}  
+	// The second button is released
+	else if (!(buttonCReading & 0x10) && (lastButtonCReading & 0x10))	{
+ 924:	80 91 fc 03 	lds	r24, 0x03FC
+ 928:	84 ff       	sbrs	r24, 4
+ 92a:	04 c0       	rjmp	.+8      	; 0x934 <__stack+0x35>
+		stop_wave(1);
+ 92c:	81 e0       	ldi	r24, 0x01	; 1
+ 92e:	90 e0       	ldi	r25, 0x00	; 0
+ 930:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+	}
+	// The third button is pressed
+	if ((buttonCReading & 0x20) && !(lastButtonCReading & 0x20))	{
+ 934:	80 91 00 04 	lds	r24, 0x0400
+ 938:	85 ff       	sbrs	r24, 5
+ 93a:	09 c0       	rjmp	.+18     	; 0x94e <__stack+0x4f>
+ 93c:	80 91 fc 03 	lds	r24, 0x03FC
+ 940:	85 fd       	sbrc	r24, 5
+ 942:	0d c0       	rjmp	.+26     	; 0x95e <__stack+0x5f>
+		start_wave(2);
+ 944:	82 e0       	ldi	r24, 0x02	; 2
+ 946:	90 e0       	ldi	r25, 0x00	; 0
+ 948:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ 94c:	08 c0       	rjmp	.+16     	; 0x95e <__stack+0x5f>
+	} 
+	// The third button is released
+	else if (!(buttonCReading & 0x20) && (lastButtonCReading & 0x20))	{
+ 94e:	80 91 fc 03 	lds	r24, 0x03FC
+ 952:	85 ff       	sbrs	r24, 5
+ 954:	04 c0       	rjmp	.+8      	; 0x95e <__stack+0x5f>
+		stop_wave(2);
+ 956:	82 e0       	ldi	r24, 0x02	; 2
+ 958:	90 e0       	ldi	r25, 0x00	; 0
+ 95a:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+
+	}
+	// The fourth button is pressed
+	if ((buttonCReading & 0x40) && !(lastButtonCReading & 0x40))	{
+ 95e:	80 91 00 04 	lds	r24, 0x0400
+ 962:	86 ff       	sbrs	r24, 6
+ 964:	09 c0       	rjmp	.+18     	; 0x978 <__stack+0x79>
+ 966:	80 91 fc 03 	lds	r24, 0x03FC
+ 96a:	86 fd       	sbrc	r24, 6
+ 96c:	0d c0       	rjmp	.+26     	; 0x988 <__stack+0x89>
+		start_wave(3);
+ 96e:	83 e0       	ldi	r24, 0x03	; 3
+ 970:	90 e0       	ldi	r25, 0x00	; 0
+ 972:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ 976:	08 c0       	rjmp	.+16     	; 0x988 <__stack+0x89>
+	} 
+	// The fourth button is released
+	else if (!(buttonCReading & 0x40) && (lastButtonCReading & 0x40))	{
+ 978:	80 91 fc 03 	lds	r24, 0x03FC
+ 97c:	86 ff       	sbrs	r24, 6
+ 97e:	04 c0       	rjmp	.+8      	; 0x988 <__stack+0x89>
+		stop_wave(3);
+ 980:	83 e0       	ldi	r24, 0x03	; 3
+ 982:	90 e0       	ldi	r25, 0x00	; 0
+ 984:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+	}
+	// The fifth button is pressed
+	if ((buttonCReading & 0x80) && !(lastButtonCReading & 0x80))	{
+ 988:	80 91 00 04 	lds	r24, 0x0400
+ 98c:	87 ff       	sbrs	r24, 7
+ 98e:	09 c0       	rjmp	.+18     	; 0x9a2 <__stack+0xa3>
+ 990:	80 91 fc 03 	lds	r24, 0x03FC
+ 994:	87 fd       	sbrc	r24, 7
+ 996:	0d c0       	rjmp	.+26     	; 0x9b2 <__stack+0xb3>
+		start_wave(4);
+ 998:	84 e0       	ldi	r24, 0x04	; 4
+ 99a:	90 e0       	ldi	r25, 0x00	; 0
+ 99c:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ 9a0:	08 c0       	rjmp	.+16     	; 0x9b2 <__stack+0xb3>
+	}
+	// The fifth button is released
+	else if (!(buttonCReading & 0x80) && (lastButtonCReading & 0x80))	{
+ 9a2:	80 91 fc 03 	lds	r24, 0x03FC
+ 9a6:	87 ff       	sbrs	r24, 7
+ 9a8:	04 c0       	rjmp	.+8      	; 0x9b2 <__stack+0xb3>
+		stop_wave(4);
+ 9aa:	84 e0       	ldi	r24, 0x04	; 4
+ 9ac:	90 e0       	ldi	r25, 0x00	; 0
+ 9ae:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+	}
+	// The sixth button is pressed
+	if ((buttonAReading & 0x80) && !(lastButtonAReading & 0x80))	{
+ 9b2:	80 91 02 04 	lds	r24, 0x0402
+ 9b6:	87 ff       	sbrs	r24, 7
+ 9b8:	09 c0       	rjmp	.+18     	; 0x9cc <__stack+0xcd>
+ 9ba:	80 91 fe 03 	lds	r24, 0x03FE
+ 9be:	87 fd       	sbrc	r24, 7
+ 9c0:	0d c0       	rjmp	.+26     	; 0x9dc <__stack+0xdd>
+		start_wave(5);
+ 9c2:	85 e0       	ldi	r24, 0x05	; 5
+ 9c4:	90 e0       	ldi	r25, 0x00	; 0
+ 9c6:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ 9ca:	08 c0       	rjmp	.+16     	; 0x9dc <__stack+0xdd>
+	}
+	// The sixth button is released
+	else if (!(buttonAReading & 0x80) && (lastButtonAReading & 0x80))	{
+ 9cc:	80 91 fe 03 	lds	r24, 0x03FE
+ 9d0:	87 ff       	sbrs	r24, 7
+ 9d2:	04 c0       	rjmp	.+8      	; 0x9dc <__stack+0xdd>
+		stop_wave(5);
+ 9d4:	85 e0       	ldi	r24, 0x05	; 5
+ 9d6:	90 e0       	ldi	r25, 0x00	; 0
+ 9d8:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+	}
+	// The seventh button is pressed
+	if ((buttonAReading & 0x40) && !(lastButtonAReading & 0x40))	{
+ 9dc:	80 91 02 04 	lds	r24, 0x0402
+ 9e0:	86 ff       	sbrs	r24, 6
+ 9e2:	09 c0       	rjmp	.+18     	; 0x9f6 <__stack+0xf7>
+ 9e4:	80 91 fe 03 	lds	r24, 0x03FE
+ 9e8:	86 fd       	sbrc	r24, 6
+ 9ea:	0d c0       	rjmp	.+26     	; 0xa06 <__stack+0x107>
+		start_wave(6);
+ 9ec:	86 e0       	ldi	r24, 0x06	; 6
+ 9ee:	90 e0       	ldi	r25, 0x00	; 0
+ 9f0:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ 9f4:	08 c0       	rjmp	.+16     	; 0xa06 <__stack+0x107>
+	}
+	// The seventh button is released
+	else if (!(buttonAReading & 0x40) && (lastButtonAReading & 0x40))	{
+ 9f6:	80 91 fe 03 	lds	r24, 0x03FE
+ 9fa:	86 ff       	sbrs	r24, 6
+ 9fc:	04 c0       	rjmp	.+8      	; 0xa06 <__stack+0x107>
+		stop_wave(6);
+ 9fe:	86 e0       	ldi	r24, 0x06	; 6
+ a00:	90 e0       	ldi	r25, 0x00	; 0
+ a02:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+	}
+	// The eighth button is pressed
+	if ((buttonAReading & 0x20) && !(lastButtonAReading & 0x20))	{
+ a06:	80 91 02 04 	lds	r24, 0x0402
+ a0a:	85 ff       	sbrs	r24, 5
+ a0c:	09 c0       	rjmp	.+18     	; 0xa20 <__stack+0x121>
+ a0e:	80 91 fe 03 	lds	r24, 0x03FE
+ a12:	85 fd       	sbrc	r24, 5
+ a14:	0d c0       	rjmp	.+26     	; 0xa30 <__stack+0x131>
+		start_wave(7);
+ a16:	87 e0       	ldi	r24, 0x07	; 7
+ a18:	90 e0       	ldi	r25, 0x00	; 0
+ a1a:	0e 94 b3 03 	call	0x766	; 0x766 <start_wave>
+ a1e:	08 c0       	rjmp	.+16     	; 0xa30 <__stack+0x131>
+	}
+	// The eighth button is released
+	else if (!(buttonAReading & 0x20) && (lastButtonAReading & 0x20))	{
+ a20:	80 91 fe 03 	lds	r24, 0x03FE
+ a24:	85 ff       	sbrs	r24, 5
+ a26:	04 c0       	rjmp	.+8      	; 0xa30 <__stack+0x131>
+		stop_wave(7);
+ a28:	87 e0       	ldi	r24, 0x07	; 7
+ a2a:	90 e0       	ldi	r25, 0x00	; 0
+ a2c:	0e 94 2b 04 	call	0x856	; 0x856 <stop_wave>
+	}	
+	
+	if(!(buttonCReading & 0xf8) && !(buttonAReading & 0xE0)) {
+ a30:	80 91 00 04 	lds	r24, 0x0400
+ a34:	90 91 01 04 	lds	r25, 0x0401
+ a38:	88 7f       	andi	r24, 0xF8	; 248
+ a3a:	99 27       	eor	r25, r25
+ a3c:	89 2b       	or	r24, r25
+ a3e:	b9 f4       	brne	.+46     	; 0xa6e <__stack+0x16f>
+ a40:	80 91 02 04 	lds	r24, 0x0402
+ a44:	90 91 03 04 	lds	r25, 0x0403
+ a48:	80 7e       	andi	r24, 0xE0	; 224
+ a4a:	99 27       	eor	r25, r25
+ a4c:	89 2b       	or	r24, r25
+ a4e:	79 f4       	brne	.+30     	; 0xa6e <__stack+0x16f>
+		buttonQueue[0].value = -1;
+ a50:	8f ef       	ldi	r24, 0xFF	; 255
+ a52:	9f ef       	ldi	r25, 0xFF	; 255
+ a54:	90 93 13 04 	sts	0x0413, r25
+ a58:	80 93 12 04 	sts	0x0412, r24
+		buttonQueue[1].value = -1;
+ a5c:	90 93 15 04 	sts	0x0415, r25
+ a60:	80 93 14 04 	sts	0x0414, r24
+		buttonQueue[2].value = -1;		
+ a64:	90 93 17 04 	sts	0x0417, r25
+ a68:	80 93 16 04 	sts	0x0416, r24
+ a6c:	07 c0       	rjmp	.+14     	; 0xa7c <__stack+0x17d>
+	}
+	else {
+		sleepCounter = 313;
+ a6e:	89 e3       	ldi	r24, 0x39	; 57
+ a70:	91 e0       	ldi	r25, 0x01	; 1
+ a72:	90 93 01 01 	sts	0x0101, r25
+ a76:	80 93 00 01 	sts	0x0100, r24
+		PORTD |= (1<<PORTD5);
+ a7a:	5d 9a       	sbi	0x0b, 5	; 11
+	}
+	lastButtonAReading = buttonAReading;
+ a7c:	80 91 02 04 	lds	r24, 0x0402
+ a80:	90 91 03 04 	lds	r25, 0x0403
+ a84:	90 93 ff 03 	sts	0x03FF, r25
+ a88:	80 93 fe 03 	sts	0x03FE, r24
+	lastButtonCReading = buttonCReading;
+ a8c:	80 91 00 04 	lds	r24, 0x0400
+ a90:	90 91 01 04 	lds	r25, 0x0401
+ a94:	90 93 fd 03 	sts	0x03FD, r25
+ a98:	80 93 fc 03 	sts	0x03FC, r24
+ a9c:	08 95       	ret
+
+00000a9e <main_loop>:
+
+/*  
+ * This is the main loop function.
+ */
+void main_loop(void){
+	PORTD &= ~ (_BV(PORTD7) | _BV(PORTD3));  
+ a9e:	8b b1       	in	r24, 0x0b	; 11
+ aa0:	87 77       	andi	r24, 0x77	; 119
+ aa2:	8b b9       	out	0x0b, r24	; 11
+	PORTC &= ~_BV(PORTC2);
+ aa4:	42 98       	cbi	0x08, 2	; 8
+	if (disableSleep != -1)
+ aa6:	80 91 02 01 	lds	r24, 0x0102
+ aaa:	90 91 03 01 	lds	r25, 0x0103
+ aae:	01 96       	adiw	r24, 0x01	; 1
+ ab0:	29 f0       	breq	.+10     	; 0xabc <main_loop+0x1e>
+	{
+		WDTCSR &= ~(1<<WDIE);
+ ab2:	e0 e6       	ldi	r30, 0x60	; 96
+ ab4:	f0 e0       	ldi	r31, 0x00	; 0
+ ab6:	80 81       	ld	r24, Z
+ ab8:	8f 7b       	andi	r24, 0xBF	; 191
+ aba:	80 83       	st	Z, r24
+	}
+	if (sleepflag == 1) {
+ abc:	80 91 fa 03 	lds	r24, 0x03FA
+ ac0:	90 91 fb 03 	lds	r25, 0x03FB
+ ac4:	01 97       	sbiw	r24, 0x01	; 1
+ ac6:	19 f4       	brne	.+6      	; 0xace <main_loop+0x30>
+		run_sleep();
+ ac8:	0e 94 62 03 	call	0x6c4	; 0x6c4 <run_sleep>
+ acc:	01 c0       	rjmp	.+2      	; 0xad0 <main_loop+0x32>
+	} else {
+		PORTD |= _BV(PORTD4);
+ ace:	5c 9a       	sbi	0x0b, 4	; 11
+	}
+	p_val = get_pot_value();
+ ad0:	0e 94 31 01 	call	0x262	; 0x262 <get_pot_value>
+ ad4:	28 2f       	mov	r18, r24
+ ad6:	30 e0       	ldi	r19, 0x00	; 0
+ ad8:	30 93 0b 04 	sts	0x040B, r19
+ adc:	20 93 0a 04 	sts	0x040A, r18
+	run_i2c(p_val);
+ ae0:	0e 94 9f 03 	call	0x73e	; 0x73e <run_i2c>
+	switch_reading = PINA;
+ ae4:	80 b1       	in	r24, 0x00	; 0
+ ae6:	90 e0       	ldi	r25, 0x00	; 0
+ ae8:	90 93 19 04 	sts	0x0419, r25
+ aec:	80 93 18 04 	sts	0x0418, r24
+	if(switch_reading != last_switch_reading) {
+ af0:	20 91 32 04 	lds	r18, 0x0432
+ af4:	30 91 33 04 	lds	r19, 0x0433
+ af8:	82 17       	cp	r24, r18
+ afa:	93 07       	cpc	r25, r19
+ afc:	11 f0       	breq	.+4      	; 0xb02 <main_loop+0x64>
+		update_wave_type();
+ afe:	0e 94 70 03 	call	0x6e0	; 0x6e0 <update_wave_type>
+	}
+	generate_notes();
+ b02:	0e 94 65 04 	call	0x8ca	; 0x8ca <generate_notes>
+ b06:	08 95       	ret
+
+00000b08 <main>:
+/*
+ * This is the main function to start with.
+ */
+int main(void)
+{
+	initialise_DDR();
+ b08:	0e 94 95 00 	call	0x12a	; 0x12a <initialise_DDR>
+	initialise_hardware();
+ b0c:	0e 94 8a 00 	call	0x114	; 0x114 <initialise_hardware>
+	initialise_button_freq();
+ b10:	0e 94 9c 00 	call	0x138	; 0x138 <initialise_button_freq>
+	sei();
+ b14:	78 94       	sei
+	wave_table = sinTable;
+ b16:	84 e9       	ldi	r24, 0x94	; 148
+ b18:	93 e0       	ldi	r25, 0x03	; 3
+ b1a:	90 93 31 05 	sts	0x0531, r25
+ b1e:	80 93 30 05 	sts	0x0530, r24
+	buttonQueue[0].value = -1;
+ b22:	cf ef       	ldi	r28, 0xFF	; 255
+ b24:	df ef       	ldi	r29, 0xFF	; 255
+ b26:	d0 93 13 04 	sts	0x0413, r29
+ b2a:	c0 93 12 04 	sts	0x0412, r28
+	buttonQueue[1].value = -1;
+ b2e:	d0 93 15 04 	sts	0x0415, r29
+ b32:	c0 93 14 04 	sts	0x0414, r28
+	buttonQueue[2].value = -1;
+ b36:	d0 93 17 04 	sts	0x0417, r29
+ b3a:	c0 93 16 04 	sts	0x0416, r28
+	keyboardQueue[0].value = -1;
+ b3e:	d0 93 0d 04 	sts	0x040D, r29
+ b42:	c0 93 0c 04 	sts	0x040C, r28
+	keyboardQueue[1].value = -1;
+ b46:	d0 93 0f 04 	sts	0x040F, r29
+ b4a:	c0 93 0e 04 	sts	0x040E, r28
+	keyboardQueue[2].value = -1;
+ b4e:	d0 93 11 04 	sts	0x0411, r29
+ b52:	c0 93 10 04 	sts	0x0410, r28
+	last_switch_reading = switch_reading = 0;
+ b56:	10 92 19 04 	sts	0x0419, r1
+ b5a:	10 92 18 04 	sts	0x0418, r1
+ b5e:	10 92 33 04 	sts	0x0433, r1
+ b62:	10 92 32 04 	sts	0x0432, r1
+	p_val = get_pot_value();
+ b66:	0e 94 31 01 	call	0x262	; 0x262 <get_pot_value>
+ b6a:	28 2f       	mov	r18, r24
+ b6c:	30 e0       	ldi	r19, 0x00	; 0
+ b6e:	30 93 0b 04 	sts	0x040B, r19
+ b72:	20 93 0a 04 	sts	0x040A, r18
+	run_i2c(p_val);
+ b76:	0e 94 9f 03 	call	0x73e	; 0x73e <run_i2c>
+	disableSleep = -1;
+ b7a:	d0 93 03 01 	sts	0x0103, r29
+ b7e:	c0 93 02 01 	sts	0x0102, r28
+	sleepflag = 0;
+ b82:	10 92 fb 03 	sts	0x03FB, r1
+ b86:	10 92 fa 03 	sts	0x03FA, r1
+	while(1) {
+		main_loop();
+ b8a:	0e 94 4f 05 	call	0xa9e	; 0xa9e <main_loop>
+ b8e:	fd cf       	rjmp	.-6      	; 0xb8a <main+0x82>
+
+00000b90 <initialise_i2c>:
+*************************************************************************/
+void initialise_i2c(void)
+{
+  /* initialize TWI clock: 100 kHz clock, TWPS = 0 => prescaler = 1 */
+  
+  TWSR = 0;                         /* no prescaler */
+ b90:	10 92 b9 00 	sts	0x00B9, r1
+  TWBR = ((F_CPU/SCL_CLOCK)-16)/2;  /* must be > 10 for stable operation */
+ b94:	88 e4       	ldi	r24, 0x48	; 72
+ b96:	80 93 b8 00 	sts	0x00B8, r24
+ b9a:	08 95       	ret
+
+00000b9c <i2c_start>:
+unsigned char i2c_start(unsigned char address)
+{
+    uint8_t   twst;
+
+	// send START condition
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ b9c:	94 ea       	ldi	r25, 0xA4	; 164
+ b9e:	90 93 bc 00 	sts	0x00BC, r25
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ ba2:	ec eb       	ldi	r30, 0xBC	; 188
+ ba4:	f0 e0       	ldi	r31, 0x00	; 0
+ ba6:	90 81       	ld	r25, Z
+ ba8:	99 23       	and	r25, r25
+ baa:	ec f7       	brge	.-6      	; 0xba6 <i2c_start+0xa>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+ bac:	90 91 b9 00 	lds	r25, 0x00B9
+ bb0:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_START) && (twst != TW_REP_START)) return 1;
+ bb2:	98 30       	cpi	r25, 0x08	; 8
+ bb4:	11 f0       	breq	.+4      	; 0xbba <i2c_start+0x1e>
+ bb6:	90 31       	cpi	r25, 0x10	; 16
+ bb8:	a1 f4       	brne	.+40     	; 0xbe2 <i2c_start+0x46>
+
+	// send device address
+	TWDR = address;
+ bba:	80 93 bb 00 	sts	0x00BB, r24
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ bbe:	84 e8       	ldi	r24, 0x84	; 132
+ bc0:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wail until transmission completed and ACK/NACK has been received
+	while(!(TWCR & (1<<TWINT)));
+ bc4:	ec eb       	ldi	r30, 0xBC	; 188
+ bc6:	f0 e0       	ldi	r31, 0x00	; 0
+ bc8:	80 81       	ld	r24, Z
+ bca:	88 23       	and	r24, r24
+ bcc:	ec f7       	brge	.-6      	; 0xbc8 <i2c_start+0x2c>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+ bce:	90 91 b9 00 	lds	r25, 0x00B9
+ bd2:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+ bd4:	98 31       	cpi	r25, 0x18	; 24
+ bd6:	39 f0       	breq	.+14     	; 0xbe6 <i2c_start+0x4a>
+ bd8:	81 e0       	ldi	r24, 0x01	; 1
+ bda:	90 34       	cpi	r25, 0x40	; 64
+ bdc:	29 f4       	brne	.+10     	; 0xbe8 <i2c_start+0x4c>
+ bde:	80 e0       	ldi	r24, 0x00	; 0
+ be0:	08 95       	ret
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_START) && (twst != TW_REP_START)) return 1;
+ be2:	81 e0       	ldi	r24, 0x01	; 1
+ be4:	08 95       	ret
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+
+	return 0;
+ be6:	80 e0       	ldi	r24, 0x00	; 0
+
+}/* i2c_start */
+ be8:	08 95       	ret
+
+00000bea <i2c_stop>:
+ Terminates the data transfer and releases the I2C bus
+*************************************************************************/
+void i2c_stop(void)
+{
+    /* send stop condition */
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ bea:	84 e9       	ldi	r24, 0x94	; 148
+ bec:	80 93 bc 00 	sts	0x00BC, r24
+	
+	// wait until stop condition is executed and bus released
+	while(TWCR & (1<<TWSTO));
+ bf0:	ec eb       	ldi	r30, 0xBC	; 188
+ bf2:	f0 e0       	ldi	r31, 0x00	; 0
+ bf4:	80 81       	ld	r24, Z
+ bf6:	84 fd       	sbrc	r24, 4
+ bf8:	fd cf       	rjmp	.-6      	; 0xbf4 <i2c_stop+0xa>
+
+}/* i2c_stop */
+ bfa:	08 95       	ret
+
+00000bfc <i2c_write>:
+unsigned char i2c_write( unsigned char data )
+{	
+    uint8_t   twst;
+    
+	// send data to the previously addressed device
+	TWDR = data;
+ bfc:	80 93 bb 00 	sts	0x00BB, r24
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ c00:	84 e8       	ldi	r24, 0x84	; 132
+ c02:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ c06:	ec eb       	ldi	r30, 0xBC	; 188
+ c08:	f0 e0       	ldi	r31, 0x00	; 0
+ c0a:	80 81       	ld	r24, Z
+ c0c:	88 23       	and	r24, r24
+ c0e:	ec f7       	brge	.-6      	; 0xc0a <i2c_write+0xe>
+
+	// check value of TWI Status Register. Mask prescaler bits
+	twst = TW_STATUS & 0xF8;
+ c10:	90 91 b9 00 	lds	r25, 0x00B9
+ c14:	98 7f       	andi	r25, 0xF8	; 248
+	if( twst != TW_MT_DATA_ACK) return 1;
+ c16:	81 e0       	ldi	r24, 0x01	; 1
+ c18:	98 32       	cpi	r25, 0x28	; 40
+ c1a:	09 f4       	brne	.+2      	; 0xc1e <i2c_write+0x22>
+ c1c:	80 e0       	ldi	r24, 0x00	; 0
+	return 0;
+
+}/* i2c_write */
+ c1e:	08 95       	ret
+
+00000c20 <_exit>:
+ c20:	f8 94       	cli
+
+00000c22 <__stop_program>:
+ c22:	ff cf       	rjmp	.-2      	; 0xc22 <__stop_program>
